@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu',sans-serif;
+}
+
+:root{
+    --background:#DBF5F0;
+    --menu:#A4E5E0;
+    --hover:#0C6170;
+}
+
+body{
+    background: var(--background);
+}
+
+.container{
+    position: relative;
+    width: 100%;
+}
+
+.navigation{
+    background: var(--menu);
+    position: fixed;
+    height: 100%;
+    width: 250px; 
+    padding-left: 10px;
+    transition: all .5s;
+    overflow: hidden;
+}
+
+.navigation.active{
+    height: 100%;
+    width: 60px; 
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li{
+    position: relative;
+    width: 95%;
+    height: 40px;
+    font-size: 1rem;
+    list-style: none;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.navigation ul li:first-child{
+    pointer-events: none;
+    margin-bottom: 40px;
+    align-items: center;
+    margin-top: 0;
+    
+}
+
+.navigation ul li:hover{
+    background: var(--hover);
+}
+
+.navigation ul li:hover a{
+    color: white;
+}
+
+.navigation ul li a{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+    font-size: 1.75em;
+}
+
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    height: 60px;
+    line-height: 60px;
+}
+
+.toggle{
+    position: absolute;
+    top: 35px;
+    right: -15px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+    border-radius: 30%;
+    background: var(--hover);
+    color: var(--menu);
+}
+.toggle:hover{
+    background: var(--hover);
+    color: white;
+}
