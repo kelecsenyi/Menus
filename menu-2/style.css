@@ -17,11 +17,6 @@ body{
     background: var(--background);
 }
 
-.container{
-    position: relative;
-    width: 100%;
-}
-
 .navigation{
     background: var(--menu);
     position: fixed;
@@ -34,44 +29,33 @@ body{
 
 .navigation.active{
     height: 100%;
-    width: 60px; 
+    width: 70px;
 }
 
 .navigation ul {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    margin-top: 40px;
 }
 
 .navigation ul li{
-    position: relative;
+    height: 50px;
     width: 95%;
-    height: 40px;
-    font-size: 1rem;
     list-style: none;
-    margin: 20px 0;
-    border-radius: 5px;
-}
-
-.navigation ul li:first-child{
-    pointer-events: none;
-    margin-bottom: 40px;
+    display: flex;
     align-items: center;
-    margin-top: 0;
-    
+    margin-top: 10px;
+    border-radius: 10px;
 }
 
 .navigation ul li:hover{
     background: var(--hover);
 }
 
-.navigation ul li:hover a{
+.navigation ul li:hover a .title,
+.navigation ul li:hover a .icon{
     color: white;
 }
 
 .navigation ul li a{
-    position: relative;
     width: 100%;
     height: 100%;
     display: flex;
@@ -79,26 +63,21 @@ body{
     text-decoration: none;
 }
 
-.navigation ul li a .icon{
-    position: relative;
-    display: block;
+.navigation .icon{
     min-width: 60px;
     height: 60px;
     line-height: 70px;
     text-align: center;
     font-size: 1.75em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--hover);
 }
 
-.navigation ul li a .title{
-    position: relative;
-    display: block;
-    height: 60px;
-    line-height: 60px;
-}
-
-.toggle{
+.navigation .toggle{
     position: absolute;
-    top: 35px;
+    top: 55px;
     right: -15px;
     width: 40px;
     height: 40px;
@@ -108,10 +87,37 @@ body{
     font-size: 2.5em;
     cursor: pointer;
     border-radius: 30%;
-    background: var(--hover);
-    color: var(--menu);
+    background: var(--background);
+    color: black;
 }
 .toggle:hover{
     background: var(--hover);
     color: white;
+}
+
+.navigation .text,
+.navigation .title{
+    font-size: 17px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 1;
+    color: var(--hover);
+}
+
+.navigation header{
+    position: relative;
+}
+
+.navigation header .image-text{
+    display: flex;
+    align-items: center;
+    color: var(--hover);
+}
+.navigation header .logo-text{
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width:360px){
+    
 }
