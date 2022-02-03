@@ -78,7 +78,7 @@ body{
 .navigation .toggle{
     position: absolute;
     top: 55px;
-    right: -15px;
+    right: 12px;
     width: 40px;
     height: 40px;
     display: flex;
@@ -119,5 +119,38 @@ body{
 }
 
 @media (max-width:360px){
-    
+    .navigation{
+        background: var(--menu);
+        position: fixed;
+        height: 100%;
+        width: 100%; 
+        padding-left: 10px;
+        transition: all .5s;
+    }
+    .navigation.active{
+        height: 100%;
+        width: 70px;
+        transform: translate(-250px,0);
+        overflow: visible;
+    }
+    .navigation.active .toggle{
+        position: absolute;
+        top: 0px;
+        right: -220px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5em;
+        cursor: pointer;
+        border-radius: 30%;
+        background: var(--background);
+        color: black;
+    }
+
+    .navigation.active .toggle:hover{
+        background: var(--hover);
+        color: white;
+    }
 }
