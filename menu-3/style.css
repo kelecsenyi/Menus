@@ -1,85 +1,81 @@
 *{
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
 
-:root{
-    --background:#DBF5F0;
-    --menu:#F3E1C0;
-    --hover:#275070;
-}
-
-body{
-    background: var(--background);
-    width: 1200px;
-    margin: 0 auto;
+html{
+    font-family: "roboto",sans-serif;
 }
 
 header{
+    background-color: #0074B7;
+    height: 60px;
+}
+
+header .wrapper{
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 200px;
+    justify-content: space-between;
+    width: 80vw;
+    margin: 0 auto;
+    height: 100%;
+    color: white;
 }
 
-header .slogen{
-    text-align: center;
-    font-size: 45px;
-    font-weight: bold;
-    font-style: italic;
-    color: #005b7e;
-    text-shadow: 2px 2px 5px rgb(0 0 0 / 30%);
-}
-
-.nav{
-    background: var(--menu);
-    display: flex;
-    position: relative;
-    padding: 20px;
-}
-
-.menu{
-    display: flex;
+nav ul{
     list-style: none;
 }
 
-.menu li{
-    
+nav ul li{
+    display: inline-block;
+    position: relative;
 }
 
-.menu a {
-    font-size: 20px;
-    color: #284b70;
-    font-weight: bold;
-    display: block;
-    padding: 10px 20px;
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    padding: .8rem;
+    margin: .5rem .5rem;
+    border-radius: .5rem;
+    transition: all .3s;
 }
 
-.menu>li>a { 
-    border: 4px solid transparent; 
-    border-radius: 10px 
+nav ul li .active{
+    color: black;
+    background-color: white;
 }
 
-.submenu{
+nav ul li a:hover{
+    color: black;
+    background-color: white;
+    transition: all .3s;
+}
+
+
+/*subnav*/
+ul li ul {
+    background: #0074B7;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 3rem;
     position: absolute;
-    z-index: 100;
-    text-align: center;
+    margin-top: 1rem;
+    left: 0;
+    /* display: none;*/
+    transition: all 0.3s ease;
+}
+
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover,
+ul li ul:focus {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+
+ul li ul li {
     width: 100%;
-    display: none;
-}
-
-.nav .image a{
-    position: absolute;
-    top: -49px;
-    left: 20px;
-    width: 170px;
-    height: 130px;
-    display: block;
-    background: url("../menu-3/pics/logo-footer.png") no-repeat;  
-}
-
-.nav .image{
-    width: 200px; 
+    padding: 1rem .5rem;
 }
